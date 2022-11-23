@@ -1,0 +1,85 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://kit.fontawesome.com/b203418b4b.js" crossorigin="anonymous"></script>
+         <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>{%block title%}UniList{% endblock %}</title>
+ </head>
+ <body>
+    
+    {%block body_content%}
+    <section class="hero is-small is-relative is-info" >
+        <nav class="level has-text-centered" style="height: 100%;">
+            <p class="level-item has-text-centered">
+              <a class="link is-info"href="/">Home</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info">Help Us</a>
+            </p>
+             
+              <p class="level-item title is-1 has-text-centered" style="font-size:80px;">
+                UniList
+              
+            </p>
+
+              
+           
+            <p class="level-item has-text-centered">
+              <a class="link is-info" href="/about">About us</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link is-info" href="/contact">Contact</a>
+            </p>
+          </nav>
+          
+        </section>
+    <div class=" box">
+        <article class="media box">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src="https://img.icons8.com/stickers/100/000000/graduation-cap.png"/>
+          
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <h1 class="title is-h2">
+                UniList
+
+                </h1>
+                 
+                  <h1 class="subtitle is-4 js-modal-trigger" data-target="modal-js-example">
+                  Join our community,help us to help students 
+                  
+                  <br>
+                  <small><a>Send your university information</a>  · 10 min</small>
+                </h1>
+              </div>
+              </div>
+            </article>
+
+          </div>
+          {%endblock%}
+     {%block content%}
+     <h1>prova</h1>
+     {%endblock%}
+     
+
+
+
+     <footer class="footer" style="position: sticky;left: 0;bottom: 0;width: 100%;">
+      <div class="content has-text-centered">
+        <p>
+          <strong>UniList</strong> by <a href="">Francesco De Fazio,Domenico Gabriele</a>. 
+          <a >other.... </a>.
+        </p>
+      </div>
+    </footer>
+ </body>
+ </html>

@@ -1,0 +1,37 @@
+
+.university_preview {
+   
+   
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+   /* -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;    
+    backface-visibility: hidden;  */
+}
+
+.university_preview:hover {
+
+}
+
+.stats_div{
+   display:none;
+  flex-direction: column;justify-content: center;align-items: center;
+  height: 100%;
+  width:100%;
+}
+.university_preview:hover > .stats_div {
+  
+ display:flex ;
+ transform:scale(1.2);
+ 
+}
+
+.university_preview:hover > .icon{
+    display:none;
+}
+
+.university_preview:hover > .title_description{
+    display:none;
+}
+.tag{overflow-x: hidden;}

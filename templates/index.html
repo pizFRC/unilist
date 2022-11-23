@@ -1,0 +1,213 @@
+{%extends "base.html"%}
+{%block title%}TEST{%endblock%}
+
+{% macro create_div_link(line)%}
+<script src="/static/js/test.js"> </script>
+<div class="column is-12-mobile is-6-tablet is-4-desktop  "  > 
+  <a class="university_preview block box " data-target="" onclick="open_modal('{{ line.title }}')" style="display: flex; min-height: 150px;z-index: 1; "> 
+    <span class="icon" style="height:auto;min-width: 25%;">
+    
+      
+      <figure class="image is-128x128">
+        <img src="/static/logo2.png">
+      </figure>
+    </span>
+    <div class="title_description" style="margin:auto;">
+    <h2 class=" title is-3">
+      {{line.title}}
+    </h2>
+      <h3 class="subtitle is-6">
+        {{line.description}}
+     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo laboriosam excepturi nobis eligendi maxime doloremque. Delectus, laboriosam illo. Nam tempora quisquam facere sint ea commodi fugiat id est maxime enim.
+    </h3> 
+
+
+  </div>
+
+      <div class="stats_div " >
+              <span class="icon-text has-text-warning block ">
+                <span class="tag">
+                  Overall
+                </span>
+                <span class="icon" style="border:1px solid red;">
+                  <i class="fas fa-star"></i>
+                </span>
+              
+                <span> <progress class="progress is-warning" value="{{ line.overall*20 }}" max="100">{{line.overall}}%</progress></span>
+              </span>
+              <span class="icon-text has-text-warning block " >
+                <span class="tag">
+                  Fun
+                </span>
+                <span class="icon" style="border:1px solid red;align-items: center;">
+                  <i class="smile_icon" style="background: url(/static/icon/icons8-smiling-16.png)no-repeat;width: 100%;height: 100%;"></i>
+                </span>
+              
+                <span> <progress class="progress is-warning" value="{{ line.fun*20 }}" max="100">{{line.fun}}</progress></span>
+              </span>
+
+              <span class="icon-text has-text-warning  block">
+                <span class="tag">
+                  Security
+                </span>
+                <span class="icon" style="border:1px solid red;">
+                 
+                  <i class="police_icon" style="background: url(/static/icon/icons8-police-16.png)no-repeat;width: 100%;height: 100%;margin:auto;"></i>
+
+
+                </span>
+              
+                <span> <progress class="progress is-warning" value="{{ line.security*20 }}" max="100">{{line.security}}%</progress></span>
+              </span>
+
+              <span class="icon-text has-text-warning block">
+                <span class="tag">
+                  Cost of life
+                </span>
+                <span class="icon" style="border:1px solid red;">
+                 
+                  <i class="cost_icon" style="background: url(/static/icon/icons8-cash-16.png)no-repeat;width: 100%;height: 100%;margin:auto;"></i>
+
+
+                </span>
+              
+                <span> <progress class="progress is-warning" value="{{ line.cost*20 }}" max="100">{{line.cost}}%</progress></span>
+              </span>
+
+
+      
+    </div>
+ 
+</a>
+
+</div>
+  
+
+
+{%endmacro %}
+
+
+
+{%block content%}
+
+<!-- FILTER BUTTON AND SEARCH INPUT-->
+<div class="container has-text-centered box " style="margin-top: 10px;display: flex;">
+
+  <div class="  is-rounded" style=" width:25%; ">
+    
+      <button class="button is-info is-rounded">
+        <span class="icon">
+          <i class="fas fa-filter"></i>
+        </span>
+        <span>Filter</span>
+      </button>
+   
+  </div>
+
+  <div class="" style=" width: 75%; ">
+    <div class="control has-icons-left has-icons-right">
+     
+      <input class="input is-rounded" type="text" placeholder="Search ">
+      <span class="icon is-medium is-left">
+        <i class="fas fa-search"></i>
+      </span>
+      <span class="icon is-medium is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+ 
+</div>
+<!-- FILTER LIST-->
+<div class="container is-fluid">
+<div class="field is-grouped is-grouped-multiline " >
+  <div class="control">
+    <div class="tags has-addons">
+      <a class="tag is-link">soleggiato</a>
+      <a class="tag is-delete"></a>
+    </div>
+  </div>
+  <div class="control">
+    <div class="tags has-addons">
+      <a class="tag is-link"> <1k </a>
+      <a class="tag is-delete"> </a>
+    </div>
+  </div>
+  <div class="control">
+    <div class="tags has-addons">
+      <a class="tag is-link">Technology</a>
+      <a class="tag is-delete"></a>
+    </div>
+  </div>
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">lifestyle</span>
+      <span class="tag is-info"> <1k$</span>
+    </div>
+  </div>
+
+
+  </div>
+
+</div>
+
+
+
+<div class="modal"  id="modal-university-info">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="tabs is-centered field">
+        <ul>
+          
+          <li class="is-active"><a>Department info</a></li>
+          <li><a>City info</a></li>
+          <li><a>Best trick from student</a></li>
+          <li ><a>Pictures</a></li>
+        </ul>
+      </div>
+      <div style="border: 1px solid red;width: 100%;height: 100%;">
+
+      </div>
+      
+      
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
+</div>
+
+<!--UNIVERSITY CARD-->
+<div class="container is-fluid is-3 has-text-centered box " style="height: 75%;border:1px solid yellow;">
+  <div class="has-background-light box" >
+    other things to show
+  </div>
+  
+  <div class="columns is-4-desktop is-multiline is-3" style="height: 100%;">
+    {% for line in items %}
+    
+    {{create_div_link(line)}}  
+   {% endfor %}
+   
+  
+  </div>
+
+  
+</div>
+<div class="container">
+
+</div>
+
+{%endblock%}
+
+
+
+ 
+
+
